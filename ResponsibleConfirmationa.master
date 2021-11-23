@@ -1,0 +1,250 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ResponsibleConfirmationa.master.cs" Inherits="BGCMS.ResponsibleConfirmationa" %>
+
+
+    <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+        <style type="text/css">
+        .style4
+        {
+            width: 745px;
+        }
+        .style5
+        {
+            width: 660px;
+        }
+    </style>
+
+    class="style2" style="height: 181px; width: 944px"
+        <style type="text/css">
+            .style2
+            {
+                width: 830px;
+            }
+            .style3
+            {
+                width: 335px;
+            }
+        </style>
+        <style type="text/css">
+            .style2
+            {
+                width: 836px;
+            }
+            .style3
+            {
+                width: 325px;
+            }
+        </style>
+        <style type="text/css">
+            .style2
+            {
+                width: 827px;
+            }
+            .style3
+            {
+                width: 428px;
+            }
+        </style>
+        <style type="text/css">
+            .style2
+            {
+                width: 832px;
+            }
+            .style3
+            {
+                width: 634px;
+            }
+        </style>
+        <style type="text/css">
+            .style2
+            {
+                width: 917px;
+            }
+            .style3
+            {
+                width: 452px;
+            }
+        </style>
+        <style type="text/css">
+            .style2
+            {
+                width: 909px;
+            }
+            .style3
+            {
+                width: 360px;
+            }
+        </style>
+<style type="text/css">
+    .style2
+    {
+        height: 28px;
+    }
+    .style3
+    {
+        height: 27px;
+        width: 423px;
+    }
+    .style4
+    {
+        height: 7px;
+        width: 423px;
+    }
+    .style5
+    {
+        height: 8px;
+        width: 423px;
+    }
+    .style6
+    {
+        height: 17px;
+        width: 423px;
+    }
+</style>
+<style type="text/css">
+    .style2
+    {
+        width: 908px;
+    }
+    .style3
+    {
+        width: 477px;
+    }
+</style>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <table class="style2" style="height: 181px; width: 944px">
+        <tr>
+            <td class="style3">
+                &nbsp;
+              <asp:Label ID="hprCount" runat="server"></asp:Label>
+                    
+                <asp:HyperLink ID="hprForRecuitment" runat="server" NavigateUrl="~/Confirmations/BossRecurimentConfirmation.aspx"
+                     ForeColor="Red" Visible="False" />
+                <asp:HyperLink ID="hprForAnnualLeave" runat="server" NavigateUrl="~/Confirmations/BossAnnualLeaveConfirmation.aspx"
+                    ForeColor="Red" Visible="False" />
+                    <asp:HyperLink ID="hprForPromotion" runat="server" NavigateUrl="~/Confirmations/BossEdgetZiwuwurConfirmation.aspx"
+                    ForeColor="Red" Visible="False"  />
+                    <asp:HyperLink ID="hprForSMET" runat="server" NavigateUrl="~/Confirmations/BossSinbetEgedaConfirmation.aspx"
+                    ForeColor="Red" Visible="False" />
+                    <asp:HyperLink ID="hprForRepresentations" runat="server" NavigateUrl="~/Confirmations/BossWukilinaConfirmation.aspx"
+                    ForeColor="Red" Visible="False"  />
+                    <asp:HyperLink ID="hprForAssetTransactions" runat="server" NavigateUrl="~/Confirmations/BossAssetTransactionsConfirmation.aspx"
+                    ForeColor="Red" Visible="False" />
+                    <asp:HyperLink ID="hprForPuchaseRequest" runat="server" NavigateUrl="~/Confirmations/BossAssetPurchasingRequestConfirmation.aspx"
+                    ForeColor="Red" Visible="False" />
+                    <asp:HyperLink ID="hprForWithdrawal" runat="server" NavigateUrl="~/Confirmations/BossWithdrawalConfirmation.aspx"
+                    ForeColor="Red" Visible="False" />
+                    <asp:HyperLink ID="hprForKirstnaRegistration" runat="server" NavigateUrl="~/Confirmations/BossEletKirstinaConfirmation.aspx"
+                    ForeColor="Red" Visible="False" />
+                    <asp:HyperLink ID="hprForGabchaRegistration" runat="server" NavigateUrl="~/Confirmations/BossGabchaConfirmation.aspx"
+                    ForeColor="Red" Visible="False" />
+                       <asp:HyperLink ID="hprEgeda" runat="server" NavigateUrl="~/Registrations/HumanResourceRegistration/Egeda_Return.aspx"
+                    ForeColor="Red" Visible="False" />
+            </td>
+            <td rowspan="11">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+             </td>
+        </tr>
+        <%-- <tr>
+            <td class="style3">
+                <asp:HyperLink ID="hprRecuriment" runat="server" 
+                    NavigateUrl="~/Confirmations/BossRecurimentConfirmation.aspx">ሰው ሐብት ቅጥር</asp:HyperLink>
+            </td>
+        </tr>>
+               <tr>
+            <td class="style3">
+                <asp:HyperLink ID="hprEdgetZiwuwur" runat="server" 
+                    NavigateUrl="~/Confirmations/BossEdgetZiwuwurConfirmation.aspx">እድገትና ዝውውሮች</asp:HyperLink>
+            </td>
+        </tr>
+       <tr>
+            <td class="style3">
+                <asp:HyperLink ID="hprlZone" runat="server" 
+                    NavigateUrl="~/Confirmations/BossAnnualLeaveConfirmation.aspx">የዓመት እረፍት ጥያቄዎች</asp:HyperLink>
+            </td>
+        </tr>
+
+         <tr>
+            <td class="style3" >
+                <asp:HyperLink ID="HyperLink2" runat="server" 
+                    NavigateUrl="~/Confirmations/BossSinbetEgedaConfirmation.aspx">ስንብት ሞት እገዳና ጡረታ</asp:HyperLink>
+            </td>
+        </tr>
+         <tr>
+            <td class="style3">
+                <asp:HyperLink ID="HyperLink1" runat="server" 
+                    NavigateUrl="~/Confirmations/BossWukilinaConfirmation.aspx">ውክልናዎች</asp:HyperLink>
+            </td>
+        </tr>
+
+         <tr>
+            <td class="style3" >
+                <asp:HyperLink ID="hprAsssetTransaction" runat="server" 
+                    NavigateUrl="~/Confirmations/BossAssetTransactionsConfirmation.aspx">ቁሳቁስ ዝውውሮች</asp:HyperLink>
+            </td>
+        </tr>
+
+         <tr>
+            <td class="style3" >
+                <asp:HyperLink ID="HyperLink3" runat="server" 
+                    NavigateUrl="~/Confirmations/BossAssetPurchasingRequestConfirmation.aspx">ግዥ ጥያቄዎች</asp:HyperLink>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="style3" >
+                <asp:HyperLink ID="HyperLink4" runat="server" 
+                    NavigateUrl="~/Confirmations/BossWithdrawalConfirmation.aspx">የገነንዘብ ወጪ ጥያቄዎች</asp:HyperLink>
+            </td>
+        </tr>
+
+         <tr>
+            <td class="style3" >
+                <asp:HyperLink ID="HyperLink5" runat="server" 
+                    NavigateUrl="~/Confirmations/BossEletKirstinaConfirmation.aspx">እለት ክርስትና</asp:HyperLink>
+            </td>
+        </tr>
+
+         <tr>
+            <td class="style3" >
+                <asp:HyperLink ID="HyperLink6" runat="server" 
+                    NavigateUrl="~/Confirmations/BossGabchaConfirmation.aspx">ጋብቻ ምዝገባ</asp:HyperLink>
+            </td>
+        </tr>
+      --%>
+         <tr>
+            <td class="style3"  >
+                <asp:HyperLink ID="hprWoreda" runat="server" 
+                    NavigateUrl="~/AoutoSystems/AnnualLeaveGeneration.aspx">ዓመት እረፍት ጀነሬሽን</asp:HyperLink>
+                      </td>
+        </tr>
+
+                    <tr>
+            <td class="style3"  >
+                     <asp:HyperLink ID="HyperLink2" runat="server" 
+                    NavigateUrl="~/Registrations/Allocation/AgelglotMediboch.aspx">አገልገሎት መመደቢያ</asp:HyperLink><br />
+                      </td>
+        </tr>
+       
+         <%--<tr>
+            <td class="style3" >
+                <asp:HyperLink ID="hprlYekihinetDereja" runat="server" 
+                    NavigateUrl="~/LookUp/YekehinetDerrejawoch.aspx">አገልገሎት መመደቢያ</asp:HyperLink>
+            </td>
+        </tr>
+           <tr>
+            <td class="style3" >
+                <asp:HyperLink ID="hprAbnetTimhrtDereja" runat="server" 
+                    NavigateUrl="~/LookUp/AbnetEducationLevel.aspx">ጥቅማጥቀምና እርዳታዎች</asp:HyperLink>
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="style3" >
+                &nbsp;</td>
+        </tr>--%>
+    </table>
+</asp:Content>
+
+

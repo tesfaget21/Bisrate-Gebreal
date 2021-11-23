@@ -1,0 +1,502 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BGCMS.SiteMaster" %>
+
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <%--  <style type="text/css">
+        .style5
+        {
+            width: 100%;
+            height: 67px;
+        }
+        .style6
+        {
+            color: #FFFFFF;
+            font-size: larger;
+        }
+    </style>--%>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body onload="showCal()">
+    <form runat="server" id="form1">
+    <div class="page">
+        <div class="header">
+            <%--<div class="loginDisplay">--%><%--<div class="title">--%>
+                   <table style="height: 119px; width: 101%;">
+                        <tr>
+                            <td>
+                                <asp:Image ID="Image2" runat="server" Height="71px" ImageUrl="~/images/EOTC_NEW_LOGO12.jpg" 
+                                    Width="73px" />
+                            </td>
+                            <td>
+                                <asp:Image ID="Image1" runat="server" Height="62px" ImageUrl="~/images/AbuyeRenamed.png"
+                                    Width="754px" />
+                                <asp:Image ID="Image3" runat="server" ImageUrl="~/images/Abbuye2.jpg" 
+                                    Height="58px" Width="107px" />
+                            </td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="White" 
+                                Text="ተጠቃሚ ስም:"></asp:Label>
+                                <asp:Label ID="lblUserName" runat="server" Font-Bold="True" 
+                                ForeColor="Lime"></asp:Label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:LinkButton
+                                    ID="lbtnChangePassword" runat="server" 
+                                OnClick="lbtnChangePassword_Click" Font-Bold="True"
+                                    ForeColor="White">የሚስጥር ቁልፍ ቀይር</asp:LinkButton>
+                                  &nbsp;&nbsp;&nbsp;
+                                <asp:LinkButton ID="lbtnLogOut" runat="server" Font-Bold="True" ForeColor="White"
+                                    OnClick="lbtnLogOut_Click">ውጣ</asp:LinkButton>
+                        </tr>
+                    </table>
+            <%--</div>--%>
+            </div>
+            <div class="clear hideSkiplink" >
+           
+                 <%-- <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+                    IncludeStyleBlock="false" Orientation="Horizontal" OnMenuItemClick="NavigationMenu_MenuItemClick" Width="100px">
+                 
+                    <Items >
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="ዋና ገጽ" />
+                        <asp:MenuItem Text="ሰው ሃብት" Value="Agelgay ena memenan">
+                            <asp:MenuItem Text="መደበኛ አገልጋይ" Value="medebegaagelgay" 
+                                NavigateUrl="~/Registrations/HumanResourceRegistration/AgelgayInformationRegistration.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="ሰበካ ጉባኤ አባላት" Value="sbeka gubae abalat" NavigateUrl="~/Registrations/HumanResourceRegistration/SebekaGubaeAbalat.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="የእለት ክርስትና" Value="kirstna" NavigateUrl="~/Registrations/HumanResourceRegistration/EletKirstinaInformation.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="ጋብቻ መመዝገቢያ" Value="ጋብቻ መመዝገቢያ" 
+                                NavigateUrl="~/Registrations/HumanResourceRegistration/GabchaRegistration.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="አብነት ተማሪዎች" Value="አብነት ተማሪዎች" NavigateUrl="~/Registrations/HumanResourceRegistration/TestingPage.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="በጎ እና ደጅ ጽኚ አገልጋይ" Value="bego agelgayoch"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="ቁሚ ንብረት" Value="Asset_Control">
+                            <asp:MenuItem Text="ምዝገባ" Value="ምዝገባ">
+                                <asp:MenuItem NavigateUrl="~/Registrations/AssetRegistration/AbyatInformation.aspx"
+                                    Text="ቤቶች" Value="ቤቶች"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Registrations/AssetRegistration/QusaquseInformation.aspx"
+                                    Text="ቁሳቁሶች" Value="ቁሳቁሶች"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Registrations/AssetRegistration/YizotaBotawochInformation.aspx"
+                                    Text="ይዞታ ቦታዎች" Value="ይዞታ ቦታዎች"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="ቤት ኪራይና ቁሳቁስ ዝውውሮች" Value="Asset_Transaction" 
+                                NavigateUrl="~/Registrations/AssetRegistration/Asset_Wuset_Kiray_Sitota_Shiyach.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text=" እቃ ግዥ መጠየቂያ" Value="ግዥ መጠየቂያ" 
+                                NavigateUrl="~/Registrations/AssetRegistration/AssetPurchaseRequest.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="ቃለ እግዚአብሔር" Value="QaleEgziabher">
+                                <asp:MenuItem NavigateUrl="~/Confirmations/FinanceAssetTransaction.aspx" 
+                                    Text="ስብከት" Value="AwudeSbket"></asp:MenuItem>
+                                <asp:MenuItem Text="ስብሐተ እግዚእ" Value="AwudeAmetZemawoch"></asp:MenuItem>
+                                <asp:MenuItem Text="የወረቀት ሰነዶች" Value="የወረቀት ሰነዶች"></asp:MenuItem>
+                                <asp:MenuItem Text="ቪዲዮዎቸ ፎቶዎች" Value="TenkesakashMsloch"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="ምደባዎች" Value="Allocations">
+                            <asp:MenuItem Text="አገልግሎት " Value="አገልግሎት " 
+                                NavigateUrl="~/Registrations/Allocation/AgelglotMediboch.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="ማረፊያ ቤትና ቢሮ" Value="ወርሃዊ በዓላት" 
+                                NavigateUrl="~/Registrations/Allocation/OfficeHomeAllocations.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Registrations/Allocation/SpecialRepresentations.aspx"
+                                Text="ሌሎች" Value="ሌሎች"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="ፋይናንስ" Value="Finance">
+                            <asp:MenuItem NavigateUrl="~/Registrations/Finances/LiyuLiyuKifyawoch.aspx" 
+                                Text="ልዩ ልዩ ገቢዎች መመዝገቢያ" Value="ልዩ ልዩ ገቢዎች መመዝገቢያ"></asp:MenuItem>
+                            <asp:MenuItem Text="እቃ ኪራይና ሽያጭ መቀበያ" Value="ኪራይና ሽያጭ መቀበያ" 
+                                NavigateUrl="~/Confirmations/FinanceAssetTransaction.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="ልዩ ልዩ ወጭዎች" Value="ወጭዎች" NavigateUrl="~/Registrations/Finances/LiyuliyuWochiwoch.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="ወርሃዊ ቤቶች ክፍያ" Value="ወርሃዊ ቤቶች ክፍያ"></asp:MenuItem>
+                        </asp:MenuItem>
+                    
+                           <asp:MenuItem Text="አስተዳዳር" Value="አስተዳዳር" NavigateUrl="~/Confirmations/BossAssetTransactionsConfirmation.aspx">
+                           
+                           <asp:MenuItem Text="ውሳኔ መስጫ" Value="ውሳኔ መስጫ" 
+                                   NavigateUrl="~/Confirmations/BossAssetTransactionsConfirmation.aspx">
+                            </asp:MenuItem>
+                               <asp:MenuItem Text="ቋሚ ንብረት ዋጋ መተመኛ" Value="ቋሚ ንብረት ዋጋ መተመኛ" 
+                                   NavigateUrl="~/Registrations/AssetRegistration/AssetPriceMaintinance.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="ኮምፒዩተር" Value="ኮምፒዩተር"></asp:MenuItem>
+                        </asp:MenuItem>
+                    
+                         <asp:MenuItem NavigateUrl="~/Confirmations/BossAssetTransactionsConfirmation.aspx" 
+                            Text="ሪፖርቶች" Value="ሪፖርቶች">
+                             <asp:MenuItem Text="የሰው ሃብት" 
+                                 Value="የሰው ሃብት">
+                                 <asp:MenuItem Text="አገልጋይ መረጃ" Value="አገልጋይ መርጃ" 
+                                     NavigateUrl="~/Reports/HRReports/AgelgayList.aspx">
+                                 </asp:MenuItem>
+                                 <asp:MenuItem Text="ሰበካ ጉባዔ አባላት" Value="ሰበካ ጉባዔ አባላት" 
+                                     NavigateUrl="~/Reports/HRReports/SebekaGubaeAbalListReport.aspx"></asp:MenuItem>
+                                 <asp:MenuItem Text="ክርስትና " Value="ክርስትና " 
+                                     NavigateUrl="~/Reports/HRReports/EletKirstinaLIstReport.aspx"></asp:MenuItem>
+                                 <asp:MenuItem Text="አብነት ተማሪዎች" Value="አብነት ተማሪዎች"></asp:MenuItem>
+                             </asp:MenuItem>
+                             <asp:MenuItem 
+                                 Text="ምደባዎች" Value="ምደባዎች">
+                                 <asp:MenuItem Text="አገልግሎት" Value="አገልግሎት" 
+                                     
+                                     NavigateUrl="~/Reports/AllocationReports/AgelglotAllocationListReport.aspx"></asp:MenuItem>
+                                 <asp:MenuItem Text="ማረፊያ ቤትና ቢሮ" Value="ማረፊያ ቤትና ቢሮ" 
+                                     NavigateUrl="~/Reports/AllocationReports/HouseAllocationListReport.aspx"></asp:MenuItem>
+                             </asp:MenuItem>
+                             <asp:MenuItem Text=" ቋሚ ንብረት " Value=" ቋሚ ንብረት">
+                                 <asp:MenuItem NavigateUrl="~/Reports/AssetReports/HouseListReport.aspx" 
+                                     Text="ቤቶች" Value="ቤቶች"></asp:MenuItem>
+                                 <asp:MenuItem NavigateUrl="~/Reports/AssetReports/YizotaBotawichListReport.aspx" 
+                                     Text="ይዞታ ቦታዎች" Value="ይዞታ ቦታዎች"></asp:MenuItem>
+                                 <asp:MenuItem Text="መገልገያ ቁሳቁቁሶች" Value="መገልገያ ቁሳቁቁሶች" 
+                                     NavigateUrl="~/Reports/AssetReports/QusaquseListReport.aspx"></asp:MenuItem>
+                                 <asp:MenuItem Text="ዝውውሮች" Value="ዝውውሮች" 
+                                     NavigateUrl="~/Reports/AssetReports/QusaquseTransactionListReport.aspx"></asp:MenuItem>
+                                 <asp:MenuItem Text="ቃለ፟ ስብሀት" Value="ቃለ፟ ስብሀት"></asp:MenuItem>
+                             </asp:MenuItem>
+                             <asp:MenuItem Text="ፋይናንስ ሪፖርቶች" Value="ፋይናንስ ሪፖርቶች">
+                                 <asp:MenuItem Text="ገቢዎች" Value="ገቢዎች" 
+                                     NavigateUrl="~/Reports/FInance/GebiListReport.aspx"></asp:MenuItem>
+                                 <asp:MenuItem Text="ወጪዎች" Value="ወጪዎች" 
+                                     NavigateUrl="~/Reports/FInance/WochiListReport.aspx"></asp:MenuItem>
+                             </asp:MenuItem>
+                         
+                        </asp:MenuItem>
+                    
+                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="መረጃ" Value="መረጃ">
+                             <asp:MenuItem NavigateUrl="~/LookUp/Region.aspx" Text="መሙያ" Value="መሙያ">
+                             </asp:MenuItem>
+                             <asp:MenuItem NavigateUrl="~/Registrations/HumanResourceRegistration/AgelgayInformationRegistration.aspx" 
+                                 Text="እርዳታ" Value="እርዳታ"></asp:MenuItem>
+                             <asp:MenuItem NavigateUrl="~/About.aspx" Text="ስለ እኛ" Value="ስለ እኛ">
+                             </asp:MenuItem>
+                        </asp:MenuItem>
+                        
+                       
+                        <asp:MenuItem Text="ሲስተም" Value="ሲስተም" 
+                            NavigateUrl="~/Administrator/Register.aspx">
+                        </asp:MenuItem>
+                        
+                       
+                    </Items>
+                </asp:Menu>--%>
+                
+               
+                <telerik:RadMenu ID="NavigationMenu" runat="server" CssClass="menu"
+                    IncludeStyleBlock="false" Orientation="Horizontal" BackColor="#4B6C9E" 
+                     ForeColor="White" BorderColor="Black">
+                    <Items>
+
+                        <%--<telerik:RadMenuItem NavigateUrl="~/About.aspx" Text="መረጃ" Value="መረጃ">
+                         <Items>--%>
+                         <%--    </Items>
+                        </telerik:RadMenuItem>--%>
+
+                        <telerik:RadMenuItem runat="server" NavigateUrl="~/Default.aspx" Text="ዋና ገጽ" 
+                            Font-Bold="True" ForeColor="White" BackColor="#4B6C9E" >
+                        </telerik:RadMenuItem>
+                        <telerik:RadMenuItem runat="server" Text="ሰው ሃብት" Value="HR" 
+                            BackColor="#4B6C9E" ForeColor="White">
+                            <Items>
+                            <telerik:RadMenuItem runat="server" 
+                                    Text="መደበኛ አገልጋይ" Value="medebegaagelgay" 
+                                
+                                    NavigateUrl="~/Registrations/HumanResourceRegistration/AgelgayInformationRegistration.aspx" 
+                                    ForeColor="White" BackColor="#4B6C9E">
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem runat="server" Text="ሰበካ ጉባኤ አባላት" 
+                                    Value="sbeka gubae abalat" 
+                                    NavigateUrl="~/Registrations/HumanResourceRegistration/SebekaGubaeAbalat.aspx" 
+                                    BackColor="#4B6C9E" ForeColor="White">
+                                </telerik:RadMenuItem>
+                                
+                                <telerik:RadMenuItem runat="server" Text="የእለት ክርስትና" Value="kirstna" 
+                                    NavigateUrl="~/Registrations/HumanResourceRegistration/EletKirstinaInformation.aspx" 
+                                    BackColor="#4B6C9E" ForeColor="White">
+                                </telerik:RadMenuItem>
+                                     <telerik:RadMenuItem runat="server" Text="ጋብቻ መመዝገቢያ" Value="ጋብቻ መመዝገቢያ" 
+                                
+                                    NavigateUrl="~/Registrations/HumanResourceRegistration/GabchaRegistration.aspx" 
+                                    BackColor="#4B6C9E" ForeColor="White">
+                                </telerik:RadMenuItem>
+                                 <telerik:RadMenuItem Text="አብነት ተማሪዎች" Value="አብነት ተማሪዎች" 
+                                    NavigateUrl="~/Registrations/HumanResourceRegistration/TestingPage.aspx" 
+                                    BackColor="#4B6C9E" ForeColor="White">
+                            </telerik:RadMenuItem>
+                            </Items>
+                                </telerik:RadMenuItem>
+                         
+
+                            <telerik:RadMenuItem  Text="ቁሚ ንብረት" Value="Asset_Control" 
+                            BackColor="#4B6C9E" ForeColor="White">
+                        <Items>
+                            <telerik:RadMenuItem runat="server" Text="ምዝገባ" Value="ምዝገባ" 
+                                BackColor="#4B6C9E" ForeColor="White">
+                            <Items>
+                                <telerik:RadMenuItem runat="server" NavigateUrl="~/Registrations/AssetRegistration/AbyatInformation.aspx"
+                                    Text="ቤቶች" Value="ቤቶች" BackColor="#4B6C9E" ForeColor="White"></telerik:RadMenuItem>
+                                <telerik:RadMenuItem runat="server" NavigateUrl="~/Registrations/AssetRegistration/QusaquseInformation.aspx"
+                                    Text="ቁሳቁሶች" Value="ቁሳቁሶች" BackColor="#4B6C9E" ForeColor="White"></telerik:RadMenuItem>
+                                <telerik:RadMenuItem runat="server" NavigateUrl="~/Registrations/AssetRegistration/YizotaBotawochInformation.aspx"
+                                    Text="ይዞታ ቦታዎች" Value="ይዞታ ቦታዎች" BackColor="#4B6C9E" ForeColor="White"></telerik:RadMenuItem>
+                                    </Items>
+                            </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" Text="ቤት ኪራይና ቁሳቁስ ዝውውሮች" Value="Asset_Transaction" 
+                                
+                                NavigateUrl="~/Registrations/AssetRegistration/Asset_Wuset_Kiray_Sitota_Shiyach.aspx" 
+                                BackColor="#4B6C9E" ForeColor="White">
+                            </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" Text=" እቃ ግዥ መጠየቂያ" Value="ግዥ መጠየቂያ" 
+                                NavigateUrl="~/Registrations/AssetRegistration/AssetPurchaseRequest.aspx" 
+                                BackColor="#4B6C9E" ForeColor="White">
+                            </telerik:RadMenuItem>
+                            </Items>
+                        </telerik:RadMenuItem>
+                        
+                         <telerik:RadMenuItem Text="ምደባዎች" Value="Allocations" 
+                            BackColor="#4B6C9E" ForeColor="White">
+                        <Items>
+                            <telerik:RadMenuItem runat="server" Text="አገልግሎት " Value="አገልግሎት " 
+                                NavigateUrl="~/Registrations/Allocation/AgelglotMediboch.aspx" 
+                                BackColor="#4B6C9E" ForeColor="White">
+                            </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" Text="ማረፊያ ቤትና ቢሮ" Value="ወርሃዊ በዓላት" 
+                                NavigateUrl="~/Registrations/Allocation/OfficeHomeAllocations.aspx" 
+                                BackColor="#4B6C9E" ForeColor="White">
+                            </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" NavigateUrl="~/Registrations/Allocation/SpecialRepresentations.aspx"
+                                Text="ሌሎች" Value="ሌሎች" BackColor="#4B6C9E" ForeColor="White"></telerik:RadMenuItem>
+                                </Items>
+                        </telerik:RadMenuItem>
+                        
+                      <telerik:RadMenuItem Text="ፋይናንስ" Value="Finance" BackColor="#4B6C9E" 
+                            ForeColor="White" Width="80px">
+                        <Items>
+                            <telerik:RadMenuItem runat="server" NavigateUrl="~/Registrations/Finances/LiyuLiyuKifyawoch.aspx" 
+                                Text="ልዩ ልዩ ገቢዎች መመዝገቢያ" Value="ልዩ ልዩ ገቢዎች መመዝገቢያ" BackColor="#4B6C9E" 
+                                ForeColor="White"></telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" Text="እቃ ኪራይና ሽያጭ መቀበያ" Value="ኪራይና ሽያጭ መቀበያ" 
+                                NavigateUrl="~/Confirmations/FinanceAssetTransaction.aspx" 
+                                BackColor="#4B6C9E" ForeColor="White">
+                            </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" Text="ልዩ ልዩ ወጭዎች" Value="ወጭዎች" 
+                                NavigateUrl="~/Registrations/Finances/LiyuliyuWochiwoch.aspx" 
+                                BackColor="#4B6C9E" ForeColor="White">
+                            </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" Text="ወርሃዊ ቤቶች ክፍያ" Value="ወርሃዊ ቤቶች ክፍያ" 
+                                BackColor="#4B6C9E" ForeColor="White"></telerik:RadMenuItem>
+                            </Items>
+                        </telerik:RadMenuItem>
+                        
+                          <telerik:RadMenuItem Text="አስተዳዳር" Value="አስተዳዳር" Width="80px" 
+                            BackColor="#4B6C9E" ForeColor="White" >
+                           <Items>                           
+                           <telerik:RadMenuItem runat="server" Text="መልእክቶችና  ውሳኔ መስጫዎች" Value="ውሳኔ መስጫ" 
+                                   NavigateUrl="~/Confirmations/BossAssetTransactionsConfirmation.aspx" 
+                                   BackColor="#4B6C9E" ForeColor="White">
+                            </telerik:RadMenuItem>
+                               <telerik:RadMenuItem runat="server" Text="ቋሚ ንብረት ዋጋ መተመኛ" Value="ቋሚ ንብረት ዋጋ መተመኛ" 
+                                   NavigateUrl="~/Registrations/AssetRegistration/AssetPriceMaintinance.aspx" 
+                                   BackColor="#4B6C9E" ForeColor="White"></telerik:RadMenuItem>
+                               <telerik:RadMenuItem runat="server" Text="ሹመት ሽረት" BackColor="#4B6C9E" 
+                                   NavigateUrl="~/Registrations/Allocation/ShumetShiret.aspx" 
+                                   ForeColor="White">
+                               </telerik:RadMenuItem>
+                            <telerik:RadMenuItem runat="server" Text="ኮምፒዩተር" Value="ኮምፒዩተር" 
+                                   BackColor="#4B6C9E" ForeColor="White" 
+                                   NavigateUrl="~/AoutoSystems/AnnualLeaveGeneration.aspx"></telerik:RadMenuItem>
+                            </Items>
+                        </telerik:RadMenuItem>
+                         <telerik:RadMenuItem 
+                            Text="ሪፖርቶች" Value="ሪፖርቶች" Width="80px" BackColor="#4B6C9E" 
+                            ForeColor="White">
+                            <Items>
+                             <telerik:RadMenuItem Text="የሰው ሃብት" 
+                                 Value="የሰው ሃብት" BackColor="#4B6C9E" ForeColor="White">
+                                 <Items>
+                                 <telerik:RadMenuItem runat="server" Text="አገልጋይ መረጃ" Value="አገልጋይ መርጃ" 
+                                     NavigateUrl="~/Reports/HRReports/AgelgayList.aspx" BackColor="#4B6C9E" 
+                                         ForeColor="White">
+                                 </telerik:RadMenuItem>
+                                 <telerik:RadMenuItem Text="ሰበካ ጉባዔ አባላት" Value="ሰበካ ጉባዔ አባላት" 
+                                    runat="server"  
+                                         NavigateUrl="~/Reports/HRReports/SebekaGubaeAbalListReport.aspx" 
+                                         BackColor="#4B6C9E" ForeColor="White"></telerik:RadMenuItem>
+                                 <telerik:RadMenuItem runat="server" Text="ክርስትና " Value="ክርስትና " 
+                                     NavigateUrl="~/Reports/HRReports/EletKirstinaLIstReport.aspx" 
+                                         BackColor="#4B6C9E" ForeColor="White"></telerik:RadMenuItem>
+                                 <telerik:RadMenuItem Text="አብነት ተማሪዎች" Value="አብነት ተማሪዎች" BackColor="#4B6C9E" 
+                                         ForeColor="White"></telerik:RadMenuItem>
+                                 </Items>
+                                 
+                                </telerik:RadMenuItem>
+                             <telerik:RadMenuItem 
+                                 Text="ምደባዎች" Value="ምደባዎች" BackColor="#4B6C9E" ForeColor="White">
+                                 <Items>
+                                 <telerik:RadMenuItem Text="አገልግሎት" Value="አገልግሎት" 
+                                     
+                                      runat="server" 
+                                         NavigateUrl="~/Reports/AllocationReports/AgelglotAllocationListReport.aspx" 
+                                         BackColor="#4B6C9E" ForeColor="White"></telerik:RadMenuItem>
+                                 <telerik:RadMenuItem Text="ማረፊያ ቤትና ቢሮ" Value="ማረፊያ ቤትና ቢሮ" 
+                                     runat="server" 
+                                         NavigateUrl="~/Reports/AllocationReports/HouseAllocationListReport.aspx" 
+                                         BackColor="#4B6C9E" ForeColor="White"></telerik:RadMenuItem>
+                                     <telerik:RadMenuItem runat="server" BackColor="#4B6C9E" Text="ሹመት ሽረት" 
+                                         NavigateUrl="~/Reports/AllocationReports/ShumetShiretListReport.aspx" 
+                                         ForeColor="White">
+                                     </telerik:RadMenuItem>
+                                     </Items>
+                             </telerik:RadMenuItem>
+                             <telerik:RadMenuItem Text=" ቋሚ ንብረት " Value=" ቋሚ ንብረት" BackColor="#4B6C9E" 
+                                    ForeColor="White">
+                                 <Items>
+                                     <telerik:RadMenuItem runat="server" BackColor="#4B6C9E" ForeColor="White" 
+                                         NavigateUrl="~/Reports/AssetReports/HouseListReport.aspx" Owner="" Text="ቤቶች" 
+                                         Value="ቤቶች">
+                                     </telerik:RadMenuItem>
+                                     <telerik:RadMenuItem runat="server" BackColor="#4B6C9E" ForeColor="White" 
+                                         NavigateUrl="~/Reports/AssetReports/YizotaBotawichListReport.aspx" Owner="" 
+                                         Text="ይዞታ ቦታዎች" Value="ይዞታ ቦታዎች">
+                                     </telerik:RadMenuItem>
+                                     <telerik:RadMenuItem runat="server" BackColor="#4B6C9E" ForeColor="White" 
+                                         NavigateUrl="~/Reports/AssetReports/QusaquseListReport.aspx" Owner="" 
+                                         Text="መገልገያ ቁሳቁቁሶች" Value="መገልገያ ቁሳቁቁሶች">
+                                     </telerik:RadMenuItem>
+                                     <telerik:RadMenuItem runat="server" BackColor="#4B6C9E" ForeColor="White" 
+                                         NavigateUrl="~/Reports/AssetReports/QusaquseTransactionListReport.aspx" 
+                                         Owner="" Text="ዝውውሮች" Value="ዝውውሮች">
+                                     </telerik:RadMenuItem>
+                                     <telerik:RadMenuItem runat="server" BackColor="#4B6C9E" ForeColor="White" 
+                                         Owner="" Text="ቃለ፟ ስብሀት" Value="ቃለ፟ ስብሀት">
+                                     </telerik:RadMenuItem>
+                                 </Items>
+                             </telerik:RadMenuItem>
+                             <telerik:RadMenuItem Text="ፋይናንስ ሪፖርቶች" Value="ፋይናንስ ሪፖርቶች" BackColor="#4B6C9E" 
+                                    ForeColor="White">
+                                 <Items>
+                                     <telerik:RadMenuItem runat="server" BackColor="#4B6C9E" ForeColor="White" 
+                                         NavigateUrl="~/Reports/FInance/GebiListReport.aspx" Owner="" Text="ገቢዎች" 
+                                         Value="ገቢዎች">
+                                     </telerik:RadMenuItem>
+                                     <telerik:RadMenuItem runat="server" BackColor="#4B6C9E" ForeColor="White" 
+                                         NavigateUrl="~/Reports/FInance/WochiListReport.aspx" Owner="" Text="ወጪዎች" 
+                                         Value="ወጪዎች">
+                                     </telerik:RadMenuItem>
+                                 </Items>
+                             </telerik:RadMenuItem>
+                         </Items>
+                        </telerik:RadMenuItem>
+
+                         <telerik:RadMenuItem runat="server" Text="ሲስተም" Value="ሲስተም" 
+                            NavigateUrl="~/Administrator/Register.aspx" BackColor="#4B6C9E" 
+                            ForeColor="White" Width="80px">
+                        </telerik:RadMenuItem>
+
+                        
+                             <telerik:RadMenuItem runat="server"  NavigateUrl="~/LookUp/Region.aspx" 
+                            Text="መሙያ" Value="መሙያ" BackColor="#4B6C9E" ForeColor="White" 
+                            Width="80px">
+                             </telerik:RadMenuItem>
+                             <telerik:RadMenuItem runat="server"  NavigateUrl="~/About.aspx" 
+                            Text="ስለ እኛ" Value="ስለ እኛ" BackColor="#4B6C9E" 
+                            ForeColor="White" Width="80px">
+                             </telerik:RadMenuItem>
+                             <telerik:RadMenuItem runat="server"  NavigateUrl="~/Help.aspx" 
+                                 Text="እርዳታ" Value="እርዳታ" Font-Bold="True" ForeColor="White" 
+                            BackColor="#4B6C9E" Width="80px"></telerik:RadMenuItem>
+
+                        
+                    </Items>
+                </telerik:RadMenu>
+                 </div>
+        <%--<telerik:RadMenuItem NavigateUrl="~/About.aspx" Text="መረጃ" Value="መረጃ">
+                         <Items>--%><%--    </Items>
+                        </telerik:RadMenuItem>--%>
+        <div class="main">
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <asp:Panel ID="Panel1" runat="server">
+                    
+                </asp:Panel>
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="clear">
+            <%--<telerik:RadMenuItem NavigateUrl="~/About.aspx" Text="መረጃ" Value="መረጃ">
+                         <Items>--%>
+        </div>
+    </div>
+    <div class="footer">
+        &nbsp;&nbsp;&nbsp;&nbsp;&copy;
+                              &nbsp;
+
+                        <asp:Label ID="lblBossRecuitmentlNotification" runat="server" Visible="False" 
+                                            ForeColor="#FF3300" ></asp:Label><br />
+                         <asp:Label ID="lblBossAnnualNotification"  runat="server" Visible="False" ForeColor="#FF3300"></asp:Label><br />
+                         <asp:Label ID="lblBossPromotionNotification" runat="server" Visible="False" 
+                                            ForeColor="#FF3300" ></asp:Label><br />
+                         <asp:Label ID="lblBossSMETNotification" runat="server" Visible="False" ForeColor="#FF3300"></asp:Label><br />
+                         <asp:Label ID="lblBossRepresentationNotification" runat="server" Visible="False" 
+                                            ForeColor="#FF3300" ></asp:Label><br />
+                          <asp:Label ID="lblBossAssetTransactionNotification" runat="server" Visible="False" 
+                                            ForeColor="#FF3300"></asp:Label><br />
+                           <asp:Label ID="lblBossPurchaseRequestNotification" runat="server" Visible="False" 
+                                            ForeColor="#FF3300"></asp:Label><br />
+                              <asp:Label ID="lblBossWithdrawalRequestNotification" runat="server" Visible="False" 
+                                            ForeColor="#FF3300" ></asp:Label><br />
+                               <asp:Label ID="lblBossKirstinaRegistrationRequestNotification" runat="server" 
+                                            Visible="False" ForeColor="#FF3300" ></asp:Label><br />
+                               <asp:Label ID="lblBossGabchaaRegistrationRequestNotification" runat="server" 
+                                            Visible="False" ForeColor="#FF3300" ></asp:Label> <br />
+                                        
+                                        </td>
+                                </tr>
+                            </table>
+                              <telerik:RadNotification ID="RadNotification1" runat="server" EnableRoundedCorners="true"
+                    EnableShadow="true" Font-Bold="True" Font-Size="Larger" Height="100px" Position="Center"
+                    Skin="Default" Text="Write the message here." TitleIcon="" VisibleOnPageLoad="false"
+                    Width="250px">
+                </telerik:RadNotification>
+                           
+                    
+                           
+                      </telerik:RadToolTip>
+                
+                </asp:Panel>
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="clear">
+            <%--<telerik:RadMenuItem NavigateUrl="~/About.aspx" Text="መረጃ" Value="መረጃ">
+                         <Items>--%>
+        </div>
+    </div>
+    <div class="footer">
+        &nbsp;&nbsp;&nbsp;&nbsp;&copy;
+        <%--    </Items>
+                        </telerik:RadMenuItem>--%>G.C. &nbsp;Bisrate Gebreal. All rights Reserved!
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,135 @@
+﻿
+    .dynamicDiv
+    {
+        border:solid 2px #14578B;
+        background-color:White;
+        /*width:216px;*/
+        font-size:10px;
+        font-family:verdan;
+        color:#000;
+        display:block;
+        position:absolute;
+        z-index:1000000;
+    }
+    
+    #tooltip
+{
+    position: absolute;
+    z-index: 1000001;
+    border: 1px solid orange;
+    font-size: 12px;
+    font-weight: normal; /*background-color:#FFCC00;*/
+    background: #fff url('../Images/Calander/yellowtip.png') repeat-x top;
+    color: Black;
+}
+    
+
+    .divheader
+    {
+        /*background-color:#972106;*/
+	background: #fff url(../Images/Calander/calhead.png) repeat-x top;
+        text-align:center;       
+         /* x-large;*/
+        font-weight:bolder;
+        color:white/*#669933*/;
+        /*border:2px solid white; */      
+    }
+E:\TFS\NLMS\NLMS_GUI\img\    #toprow
+    {
+        color:#2D4A5D/*#669933*/;
+        font-weight:bold;
+        font-size:80%;
+    }
+    /*.tbl
+    {
+        width:238px;
+    }*/
+    .tt
+    {
+        /*width:20px;*/
+        font-size:8px;
+    }
+
+    .btns
+    {
+        /*margin:0 auto;*/
+        width:22px;
+        Height:12px;
+        font-size:120%;
+        text-align:center;
+        display:block;
+        background-color:white;
+        color:#11607F;/*#6699cc;*/
+        font-weight:bold;
+    }
+    
+    .btns:hover
+    {
+     /* background-color:#669933;*/
+      background: #fff url(../Images/Calander/calhead.png) repeat-x top;
+      color:White;      
+    }
+    
+    .btnempty
+    {
+        background-color:White;
+        display:none;
+    }
+
+    .tt:hover
+    {
+        /*background-color:Yellow; */
+        /*background: #fff url(../Pictures/calhead.png) repeat-x top;*/
+        cursor:pointer;       
+    }
+
+    .lists
+    {
+       margin-left:3px;
+       color:#11607F;
+       /*font-size:110%;
+       border:1px solid navy;*/
+       font-family:Visual Geez Unicode;
+    }
+    .txt
+    {
+        z-index:1;
+    }
+    .close
+    {
+        width:10px;
+        height:13px;
+        margin-left:225px;
+        margin-top:5px;
+        border:1px solid black;
+        background-color:Red;
+        
+    }
+    
+    #div3
+    {
+        color:white;
+        /*background-color:#972106;*/
+        	background: #fff url(../Images/Calander/calhead.png) repeat-x top;
+  
+    }
+#btn7,#btn14,#btn21,#btn28,#btn35{color:#7D9EC0;/*#63B8FF;*/}
+#btn7:hover{background-color:#669933;color:White;}
+#btn14:hover{background-color:#669933;color:White;}
+#btn21:hover{background-color:#669933;color:White;}
+#btn28:hover{background-color:#669933;color:White;}
+#btn35:hover{background-color:#669933;color:White;}
+
+#toolTip{
+width:80px;
+height:25px;
+        border:solid 2px navy;
+        background-color:White;
+        /*width:240px;*/
+        font-size:11px;
+        font-family:verdan;
+        color:#000;
+        display:block;
+        position:absolute;
+        z-index:1000;
+}

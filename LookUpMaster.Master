@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LookUpMaster.Master.cs" Inherits="BGCMS.LookUpMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .style4
+        {
+            width: 745px;
+        }
+        .style5
+        {
+            width: 660px;
+        }
+    </style>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <table class="style2" style="height: 181px; width: 944px">
+        <tr>
+            <td >
+                &nbsp;</td>
+            <td  class="style4" rowspan="11">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                   
+                </asp:ContentPlaceHolder>
+             </td>
+        </tr>
+        <tr>
+            <td >
+                <asp:HyperLink ID="hprlKelil" runat="server" 
+                    NavigateUrl="~/LookUp/Region.aspx">ክልል መመዝገቢያ</asp:HyperLink>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <asp:HyperLink ID="hprlZone" runat="server" 
+                    NavigateUrl="~/LookUp/Zone.aspx">ዞን መመዝገቢያ</asp:HyperLink>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <asp:HyperLink ID="hprWoreda" runat="server" 
+                    NavigateUrl="~/LookUp/Woreda.aspx">ወረዳ መመዝገቢያ</asp:HyperLink>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:HyperLink ID="hprlYekihinetDereja" runat="server" 
+                    NavigateUrl="~/LookUp/YekehinetDerrejawoch.aspx">የክህነት ደረጃዎች </asp:HyperLink>
+            </td>
+        </tr>
+        <tr>
+            <td  >
+                <asp:HyperLink ID="hprAbnetTimhrtDereja" runat="server" 
+                    NavigateUrl="~/LookUp/AbnetEducationLevel.aspx">የአብነት ትምህርት ደረጃዎች </asp:HyperLink>
+            </td>
+        </tr>
+        <tr>
+            <td  >
+                <asp:HyperLink ID="HyperLink5" runat="server" 
+                    NavigateUrl="~/LookUp/AskualaTemhirt Dereja.aspx">የአስኳላ ትምህርት ደረጃዎች </asp:HyperLink>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <asp:HyperLink ID="HyperLink6" runat="server" 
+                    NavigateUrl="~/LookUp/AgelglotZerf.aspx">የአገልግሎት ዘርፍ አይነቶች </asp:HyperLink>
+            </td>
+        </tr>
+
+         <tr>
+            <td >
+                <asp:HyperLink ID="HyperLink3" runat="server" 
+                    NavigateUrl="~/LookUp/AgelglotMedib.aspx">የአገልግሎት ስሞች  </asp:HyperLink>
+            </td>
+        </tr>
+
+        <tr>
+            <td >
+                <asp:HyperLink ID="HyperLink10" runat="server" 
+                    NavigateUrl="~/LookUp/AgelglotShumetSimoch.aspx">የአገልግሎት ሹመት ስሞች  </asp:HyperLink>
+            </td>
+        </tr>
+         <tr>
+            <td >
+                <asp:HyperLink ID="HyperLink4" runat="server" 
+                    NavigateUrl="~/LookUp/CommonAssetNames.aspx">የቁስ ስሞች  </asp:HyperLink>
+            </td>
+        </tr>
+
+         <tr>
+            <td >
+                <asp:HyperLink ID="HyperLink9" runat="server" 
+                    NavigateUrl="~/LookUp/KifyaTypeNames.aspx">ክፍያ ስሞች  </asp:HyperLink>
+            </td>
+        </tr>
+       
+        <tr>
+            <td >
+                <asp:HyperLink ID="HyperLink7" runat="server" 
+                    NavigateUrl="~/LookUp/FamilyRelationship.aspx">ከቤተሰብ ኃላፊ ጋር ዝምድናዎች </asp:HyperLink>
+            
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <asp:HyperLink ID="HyperLink8" runat="server" 
+                    NavigateUrl="~/LookUp/Metedaderia.aspx">የኑሮ መተዳደሪያዎች  </asp:HyperLink>
+           
+            </td>
+        </tr>
+         <tr>
+            <td >
+                <asp:HyperLink ID="HyperLink1" runat="server" 
+                    NavigateUrl="~/LookUp/HouseType.aspx">ቤት አይነቶች </asp:HyperLink>
+
+            </td>
+        </tr>
+         <tr>
+            <td >
+                <asp:HyperLink ID="HyperLink2" runat="server" 
+                    NavigateUrl="~/LookUp/Maereg.aspx">የመዓረግ መጠርያዎች </asp:HyperLink>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                &nbsp;</td>
+        </tr>
+    </table>
+
+</asp:Content>
